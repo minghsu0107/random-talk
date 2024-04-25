@@ -216,6 +216,7 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
+  # Don't need to setup CORS here as CORS is already enabled by default on all buckets for all HTTP verbs
   createbucket:
     image: minio/mc:RELEASE.2023-07-11T23-30-44Z
     restart: on-failure:5
