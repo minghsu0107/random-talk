@@ -544,7 +544,7 @@ async function setPeer(peerID) {
             if (result.picture !== "") {
                 ID2PICTURE[peerID] = result.picture
             } else {
-                ID2PICTURE[peerID] = "https://avatars.dicebear.com/api/pixel-art/" + peerID + ".svg"
+                ID2PICTURE[peerID] = "https://api.dicebear.com/7.x/pixel-art/svg?seed=" + peerID
             }
         })
         .catch(err => {
