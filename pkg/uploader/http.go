@@ -90,7 +90,9 @@ func NewHttpServer(name string, logger common.HttpLog, config *config.Config, sv
 		Region:                      config.Uploader.S3.Region,
 		RetryMaxAttempts:            3,
 	}
-	s3Client := s3.NewFromConfig(awsConfig)
+	s3Client := s3.NewFromConfig(awsConfig, func(o *s3.Options) {
+	    o.UsePathStyle = true
+	})
 
 	return &HttpServer{
 		name:                     name,
